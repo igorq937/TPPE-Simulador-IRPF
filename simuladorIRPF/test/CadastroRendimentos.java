@@ -30,4 +30,12 @@ public class CadastroRendimentos {
 		calculadora.cadastraRendimento("Investimentos", 2000f);
 		assertEquals(7000f, calculadora.getTotalRendimentos(), 0f);
 	}
+	
+	@Test
+	public void testCadastroTresRendimentos() {
+		calculadora.cadastraRendimento("Salario", 5000f);
+		calculadora.cadastraRendimento("Investimentos", 2000f);
+		calculadora.cadastraRendimento("Aluguel", 1000f);
+		assertEquals(8000f, calculadora.getTotalRendimentos(), 0f);
+	}
 }
