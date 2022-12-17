@@ -2,40 +2,61 @@ package test;
 
 import static org.junit.Assert.*;
 
+import java.util.Arrays;
+import java.util.Collection;
+
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
+import org.junit.runners.Parameterized.Parameters;
 
 import src.CalculadoraIRPF;
 
-
+@RunWith(Parameterized.class)
 public class CadastroRendimentos {
 	
 	CalculadoraIRPF calculadora;
+	Object[][] rendimentos;
+	float valorEsperado;
 	
+	public CadastroRendimentos(Object[][] rendimentos, float valorEsperado) {
+		this.rendimentos = rendimentos;
+		this.valorEsperado = valorEsperado;
+	}
 	
 	@Before
 	public void setup() {
 		calculadora = new CalculadoraIRPF(); 
 	}
 	
-	@Test
-	public void testCadastroRendimento() {
-		calculadora.cadastraRendimento("Salario", 5000f);
-		assertEquals(5000f, calculadora.getTotalRendimentos(), 0f);
+	@Parameters
+	public static Collection<Object[]> getParameters() {
+		// {[Descricao, Valor], valorEsperado]}		
+		Object[][] parametros = new Object[][] {
+			{
+				new Object[][] {{"Salário", 5000f}}, 5000f				
+			},
+			{
+				new Object[][] {{"Salário", 5000f}, {"Investimentos", 2000f}}, 7000f
+			},
+			{
+				new Object[][] {{"Salário", 5000f}, {"Investimentos", 2000f}, {"Aluguel", 1000f}}, 8000f
+			},
+		};
+		
+		return Arrays.asList(parametros);
 	}
 	
 	@Test
-	public void testCadastroDoisRendimentos() {
-		calculadora.cadastraRendimento("Salario", 5000f);
-		calculadora.cadastraRendimento("Investimentos", 2000f);
-		assertEquals(7000f, calculadora.getTotalRendimentos(), 0f);
+	public void testCadastroRendimentos() {
+		for(Object[] rendimento: rendimentos) {
+			calculadora.cadastraRendimento((String)rendimento[0], (float)rendimento[1]);
+		}
+		
+		assertEquals(valorEsperado, calculadora.getTotalRendimentos(), 0f);
 	}
 	
-	@Test
-	public void testCadastroTresRendimentos() {
-		calculadora.cadastraRendimento("Salario", 5000f);
-		calculadora.cadastraRendimento("Investimentos", 2000f);
-		calculadora.cadastraRendimento("Aluguel", 1000f);
-		assertEquals(8000f, calculadora.getTotalRendimentos(), 0f);
-	}
+	
+	
 }
