@@ -1,18 +1,23 @@
 package src;
 
+import java.util.ArrayList;
+
 public class CalculadoraIRPF {
 
-	private String descricao;
-	private float valor;
+	private ArrayList<Rendimento> rendimento;
+	private float valorTotalRendimentos;
+	
+	public CalculadoraIRPF() {
+		rendimento = new ArrayList<Rendimento>();
+	}
 	
 	public void cadastraRendimento(String descricao, float valor) {
-		this.descricao = descricao;
-		this.valor = valor;
-		
+		rendimento.add(new Rendimento(descricao, valor));
+		this.valorTotalRendimentos += valor;
 	}
 
 	public float getTotalRendimentos() {
-		return 5000;
+		return valorTotalRendimentos;
 	}
 
 }
