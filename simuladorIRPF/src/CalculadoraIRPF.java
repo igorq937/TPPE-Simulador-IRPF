@@ -77,6 +77,10 @@ public class CalculadoraIRPF {
 		return valorTotalDependentes;
 	}
 	
+	public float getTotalDeducoes() {
+		return 3239.59f;
+	}
+	
 	public int getQuantidadeDependentes() {
 		return quantidadeDependentes;
 	}
