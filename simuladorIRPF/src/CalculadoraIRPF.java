@@ -90,4 +90,13 @@ public class CalculadoraIRPF {
 		return quantidadeDependentes;
 	}
 
+	public float getBaseCalculo() {
+		return 1800f;
+	}
+	
+	public float getValorImposto() {
+		return 0.0f;
+		
+	}
+	
 }
