@@ -1,2 +1,5 @@
 /DescricaoEmBrancoException.class
 /ValorRendimentoInvalidoException.class
+/ValorDeducaoInvalidoExceptiom.class
+/ValorDeducaoInvalidoException.class
+/NomeEmBrancoException.class

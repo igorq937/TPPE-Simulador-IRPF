@@ -40,4 +40,14 @@ public class TesteExcecaoDescricaoCadastroRendimentos {
 		assertThrows(DescricaoEmBrancoException.class, () -> new Rendimento(descricao, 100f));
 	}
 	
+	@Test
+	public void testeExcecaoContribuicaoPrevidenciaria() throws DescricaoEmBrancoException, ValorDeducaoInvalidoException{
+		assertThrows(DescricaoEmBrancoException.class, () -> new ContribuicaoPrevidenciaria(descricao, 100f));
+	}
+
+	@Test
+	public void testeExcecaoOutrasDeducoes() throws DescricaoEmBrancoException, ValorDeducaoInvalidoException {
+		assertThrows(DescricaoEmBrancoException.class, () -> new OutrasDeducoes(descricao, 100f));
+	}
+	
 }
