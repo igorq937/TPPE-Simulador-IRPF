@@ -2,6 +2,9 @@ package src;
 
 import java.util.ArrayList;
 
+import exception.DescricaoEmBrancoException;
+import exception.ValorRendimentoInvalidoException;
+
 public class CalculadoraIRPF {
 
 	private ArrayList<Rendimento> rendimento;
@@ -11,7 +14,7 @@ public class CalculadoraIRPF {
 		rendimento = new ArrayList<Rendimento>();
 	}
 	
-	public void cadastraRendimento(String descricao, float valor) {
+	public void cadastraRendimento(String descricao, float valor) throws DescricaoEmBrancoException, ValorRendimentoInvalidoException {
 		rendimento.add(new Rendimento(descricao, valor));
 		this.valorTotalRendimentos += valor;
 	}

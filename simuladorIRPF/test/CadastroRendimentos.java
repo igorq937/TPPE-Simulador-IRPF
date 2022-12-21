@@ -11,6 +11,8 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 
+import exception.DescricaoEmBrancoException;
+import exception.ValorRendimentoInvalidoException;
 import src.CalculadoraIRPF;
 
 @RunWith(Parameterized.class)
@@ -49,7 +51,7 @@ public class CadastroRendimentos {
 	}
 	
 	@Test
-	public void testCadastroRendimentos() {
+	public void testCadastroRendimentos() throws DescricaoEmBrancoException, ValorRendimentoInvalidoException {
 		for(Object[] rendimento: rendimentos) {
 			calculadora.cadastraRendimento((String)rendimento[0], (float)rendimento[1]);
 		}

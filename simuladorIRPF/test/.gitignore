@@ -1,2 +1,6 @@
 /CadastroRendimentos.class
 /CadastroRendimento.class
+/TesteExcecaoCadastroRendimentos.class
+/ValorRendimentoInvalidoException.class
+/TesteExcecaoDescricaoCadastroRendimentos.class
+/TesteExcecaoValorCadastroRendimentos.class
