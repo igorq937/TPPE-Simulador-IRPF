@@ -78,7 +78,12 @@ public class CalculadoraIRPF {
 	}
 	
 	public float getTotalDeducoes() {
-		return 3239.59f;
+		float totalDeducoes = this.getTotalDependentes() + 
+				this.getTotalContribuicaoPrevidenciaria() +
+				this.getTotalPensaoAlimenticia() +
+				this.getTotalOutrasDeducoes();
+		
+		return totalDeducoes;
 	}
 	
 	public int getQuantidadeDependentes() {
