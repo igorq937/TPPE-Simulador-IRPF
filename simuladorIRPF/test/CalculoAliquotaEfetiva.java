@@ -14,7 +14,14 @@ public class CalculoAliquotaEfetiva {
 	public void testeCalculoAliquotaEfetiva() throws DescricaoEmBrancoException, ValorRendimentoInvalidoException {
 		CalculadoraIRPF calculadora = new CalculadoraIRPF();
 		calculadora.cadastraRendimento("Salario", 2000f);
-		assertEquals(calculadora.getAliquotaEfetiva(), 7.20f, 0.01f);
+		assertEquals(calculadora.getAliquotaEfetiva(), 0.0036f, 0.01f);
+	}
+	
+	@Test
+	public void testeCalculoAliquotaEfetiva2() throws DescricaoEmBrancoException, ValorRendimentoInvalidoException {
+		CalculadoraIRPF calculadora = new CalculadoraIRPF();
+		calculadora.cadastraRendimento("Salario", 1000f);
+		assertEquals(calculadora.getAliquotaEfetiva(), 0.0f, 0.0f);
 	}
 	
 }
