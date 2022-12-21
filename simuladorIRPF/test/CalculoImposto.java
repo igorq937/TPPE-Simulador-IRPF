@@ -32,4 +32,16 @@ public class CalculoImposto {
 		assertEquals(calculadora.getValorImposto(), 401.21f, 0.01f);
 	}
 	
+	@Test
+	public void testeCalculoImposto3() throws DescricaoEmBrancoException, ValorRendimentoInvalidoException, ValorDeducaoInvalidoException, NomeEmBrancoException {
+		CalculadoraIRPF calculadora = new CalculadoraIRPF();
+		calculadora.cadastraRendimento("Investimento", 2000f);
+		calculadora.cadastraRendimento("Salario", 3000f);
+		calculadora.cadastraPensaoAlimenticia(500f);
+		calculadora.cadastraOutrasDeducoes("Previdencia Privada", 200f);
+		calculadora.cadastraDependente("Jao", "09/10/2000");
+		assertEquals(calculadora.getBaseCalculo(), 4110.41, 0.001f);
+		assertEquals(calculadora.getValorImposto(), 288.71f, 0.01f);
+	}
+	
 }
