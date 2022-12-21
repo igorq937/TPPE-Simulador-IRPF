@@ -4,3 +4,11 @@
 /ValorRendimentoInvalidoException.class
 /TesteExcecaoDescricaoCadastroRendimentos.class
 /TesteExcecaoValorCadastroRendimentos.class
+/CadastroDeducoes.class
+/CadastroPensaoAlimenticia.class
+/CadastroPensaoAlimenticia2.class
+/CadastroContribuicaoPrevidenciaria.class
+/CadastroDependente.class
+/TesteExcecaoNomeEmBrancoCadastroDependente.class
+/CadastroOutrasDeducoes.class
+/RendimentoExcecao.class
