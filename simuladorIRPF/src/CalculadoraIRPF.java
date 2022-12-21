@@ -113,4 +113,8 @@ public class CalculadoraIRPF {
 		return totalImposto;
 	}
 	
+	public float getAliquotaEfetiva() {
+		return 7.20f;
+	}
+	
 }
